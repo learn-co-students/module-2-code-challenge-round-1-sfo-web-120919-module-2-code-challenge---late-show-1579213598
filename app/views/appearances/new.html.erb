@@ -1,0 +1,7 @@
+<h1>Create new appearance</h1>
+
+<%=form_for appearance_path do |f|%>
+<%=collection_select(:post, :author_id, Author.all, :id, :name_with_initial, :prompt => true)%>
+
+
+<%end%>
