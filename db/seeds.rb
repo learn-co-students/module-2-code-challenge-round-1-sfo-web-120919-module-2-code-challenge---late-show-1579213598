@@ -25,3 +25,13 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+guest1 = Guest.create([{ name: 'Brooke Bachman' }, { occupation: 'Acrobat' }])
+
+guest2 = Guest.create([{ name: 'Harriet Tubman' }, { occupation: 'Civil Rights Activist' }])
+
+guest3 = Guest.create([{ name: 'Robert DeNiro' }, { occupation: 'Actor' }])
+
+
+episode1 = Episode.create([{ date: 08291994 }, { number: 33 }])
+episode2 = Guest.create([{ name: 'Brooke Bachman' }, { number: 100 }])
+episode3 = Guest.create([{ date: Date.new }, { number: '25' }])
