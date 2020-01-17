@@ -12,4 +12,12 @@ class Episode < ApplicationRecord
        end
        rate
     end
+
+    def avg_rate
+        rate = 0
+        self.appearances.each do |a|
+            rate += a.rating
+        end
+        rate/(self.appearances.count)
+    end
 end
