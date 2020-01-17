@@ -1,0 +1,15 @@
+<h1><%= @guest.name %></h1><br>
+<h2>Occupation: <%= @guest.occupation %></h2>
+
+<% if @guest.episodes.any? %>
+
+<ul>
+   <% @guest.appearances.order(rating: :desc ).map{|a| a.episode}.each do |episode| %>
+   
+     <li><%= link_to "Episode #{episode.number}", episode %></li>
+     <li>Appearance Rating: <%= Appearance.find_by(guest: @guest, episode: episode).rating %>  </li>
+
+   <% end %>
+
+</ul>
+<% end  %>

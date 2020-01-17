@@ -1,0 +1,33 @@
+<h1>Create a new appearance!</h1>
+
+
+
+<% if @appearance.errors.any? %>
+
+   <ul>
+    
+    <% @appearance.errors.full_messages do |error| %>
+      
+      <li>
+       <%= error %>
+      </li>
+    <% end  %>
+     
+   </ul>
+
+
+<% end %>
+
+<%= form_for(@appearance) do |f| %>
+
+  <%= f.label :episode, "Episode Number" %>
+  <%= f.collection_select :episode, Episode.all, :id, :number %><br><br>
+  <%= f.label :guest, "Guest" %>
+  <%= f.collection_select :guest, Guest.all, :id, :name %><br><br>
+  <%= f.label :rating, "Rating" %>
+  <%= f.number_field :rating, {min: 1, max: 5}  %><br><br>
+  <%= f.submit "Submit" %>
+
+   
+
+<% end   %>
