@@ -1,0 +1,35 @@
+
+<h1>Appearances</h1>
+
+<%= form_for(@appearance) do |f| %>
+ <%= f.label :guest %>
+ <%= f.date_field :guest %>
+ <br/>
+ <br/>
+ 
+ <%= f.label :guest_id %>
+ <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+ <br/>
+ <br/>
+
+ <%= f.label :episode_id %>    
+ <%= f.collection_select :episode_id, Episode.all, :id, :name %>
+ <br/>
+ <br/>
+
+ <%= f.label :rating %>
+ <%= f.number_field :rating %>
+ <br/>
+ <br/>
+
+ <%= f.submit "Submit!" %>
+<% end %>
+
+<% if @appearance.errors.any? %>
+ <ul>
+   <% @appearance.errors.full_messages.each do |error| %>
+     <li><%= error %></li>
+   <% end %>
+ </ul>
+<% end %>
+

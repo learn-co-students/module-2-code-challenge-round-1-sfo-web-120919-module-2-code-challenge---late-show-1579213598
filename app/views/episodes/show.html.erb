@@ -1,0 +1,17 @@
+
+<h1><%= @episode.date %></h1>
+
+<h1><%= @episode.appearance.rating %></h1>
+
+<h2><%= link_to @episode.guest, guest_path(@guest)%></h2>
+
+<ul>
+ <% @episode.appearance.each do |e|  %>
+   <li>
+     <%= link_to "#{e.guest.name} ", e.guest %>
+   </li>
+ <% end %>
+</ul>
+
+
+<%= link_to "Back to all Episodes", episodes_path%>
