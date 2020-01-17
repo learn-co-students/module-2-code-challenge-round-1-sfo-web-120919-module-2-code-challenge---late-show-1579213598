@@ -1,0 +1,17 @@
+# ### 1. Guest Show Page
+
+# There should be a show page for each Guest. It should display the:
+
+# - Guest's name
+# - Guest's occupation
+
+
+<h1>Guest Show Page</h1>
+<ul>
+  <% @guest.each do |guest| %>
+
+	 <li><%= guest.name %> </li>
+	 <li><%= guest.occupation %> </li>
+  
+	<% end %>
+	</ul>
