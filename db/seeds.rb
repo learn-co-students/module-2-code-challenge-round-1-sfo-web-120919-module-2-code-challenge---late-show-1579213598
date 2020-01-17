@@ -25,3 +25,5 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+Appearance.create(rating: 5, guest_id: guest.id, episode_id: episode_id )
+

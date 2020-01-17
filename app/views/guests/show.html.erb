@@ -1,0 +1,15 @@
+
+<h1><%= @guest.name %></h1>
+
+<h2><%= @guest.occupation %></h2>
+
+<ul>
+ <% @guest.appearance.each do |g|  %>
+   <li>
+     <%= link_to "#{g.episode.name} ", g.episode %>
+    
+   </li>
+ <% end %>
+</ul>
+
+<%= link_to "Back to all Guests", guests_path%>
