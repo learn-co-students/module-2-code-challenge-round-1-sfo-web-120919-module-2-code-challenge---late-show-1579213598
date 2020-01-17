@@ -1,0 +1,17 @@
+<h2>Create new Appearance</h2>
+<%= form_for(@app) do |f| %>
+
+Guests : <%= f.collection_select :guest_id, Guest.all, :id, :name %><br><br>
+Episode :<%= f.collection_select :episode_id, Episode.all, :id, :number %><br><br>
+<%= f.label :rating %><br><br>
+<%= f.number_field :rating%><br><br>
+
+<%= f.submit %><br><br>
+<% end %>
+
+
+<% if @app.errors.any?%>
+<% @app.errors.full_messages.each do |mesg| %>
+    <%= mesg %>
+<% end %>
+<% end %>

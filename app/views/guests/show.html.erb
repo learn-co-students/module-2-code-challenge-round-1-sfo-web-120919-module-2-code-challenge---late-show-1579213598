@@ -1,0 +1,15 @@
+<h1><%= @guest.name %></h1>
+
+<h3>Occupation : <%= @guest.occupation.capitalize %></h3>
+
+<h3>You can see <%= @guest.name %> in the below episode : </h3>
+
+<ol>
+<% @episodes.each do |epi| %>
+   <li>Episode number <%= link_to epi.number,epi %></li>
+<% end %>
+</ol>
+
+<br><br>
+
+<%= link_to "Back to list of all guests!", guests_path %>

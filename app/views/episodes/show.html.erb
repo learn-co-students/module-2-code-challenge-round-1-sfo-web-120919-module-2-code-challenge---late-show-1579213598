@@ -1,0 +1,13 @@
+<h1>##Episode <%= @episode.number %> -- <%= @episode.date %></h1>
+
+<h4>Episode Number = <%= @episode.number %></h4>
+<h4>Episode Date => <%= @episode.date %></h4>
+
+<h3>Guests of this episode are :</h3>
+<ol>
+<% @guests.each do |guest| %>
+    <li><%= link_to guest.name, guest %> Rating : <%= @episode.find_rate  %> </li>
+<% end %>
+</ol>
+
+Average rating for this episode is <%= @episode.avg_rate %>
