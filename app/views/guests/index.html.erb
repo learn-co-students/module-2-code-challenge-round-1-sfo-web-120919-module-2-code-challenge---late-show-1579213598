@@ -2,6 +2,11 @@
 
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%= link.to guest.name, guests_path %></li>
   <% end %>
 </ul>
+
+
+
+#On the Guests index page, clicking on a guest's name should navigate to the show page.
+

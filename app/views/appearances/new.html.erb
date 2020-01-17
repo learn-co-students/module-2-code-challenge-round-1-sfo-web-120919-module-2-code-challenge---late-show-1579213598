@@ -1,0 +1,28 @@
+# A user can fill out a form to create a new Appearance. They can:
+
+# - Choose an existing guest from a select dropdown
+# - Choose an existing episode from a select dropdown
+# - Enter a numeric rating
+# - Submit the form
+
+
+<h1>This is the new Appearance form </h1>
+
+<% if @appearance.errors.any? %>
+
+<ul>
+  <% @appearance.errors.full_messages.each do |error| %>
+	<li><%= error %> </li>
+
+</ul>
+<% end %>
+
+<%= form_for(@apperance) do |f|%>
+
+<%= f.collection_select :guest_id, Guest.all, :id, :name %><br>
+<%= f.collection_select :episode_id, Episode.all, :id, :date %><br>
+# enter numeric rating
+
+<%= f.submit %>
+
+<% end %>
