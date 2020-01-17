@@ -1,0 +1,8 @@
+<h1>Create an Appearance</h1><br>
+
+<%= form_for @appearance do |f| %>
+Guest: <%= f.collection_select :guest_id, Guest.all, :id, :name %><br><br>
+Episode: <%= f.collection_select :episode_id, Episode.all, :id, :number %><br><br>
+Rating: <%= f.number_field :rating%><br><br>
+<%= f.submit "Create Appearance" %>
+<% end%>
